@@ -117,7 +117,7 @@ void toggleMotorDirection() {
 }
 
 
-//Read Pot Meter and set speed
+//Read Pot Meter and set speed variable
 void readPotMeter() {
   //Smooth pot_meter_value, so that it doesn't jump around too much
   pot_meter_value = lerp(pot_meter_value, analogRead(pot_meter_pin), 0.1);
