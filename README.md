@@ -90,4 +90,4 @@ Hastigheten kan kontrolleres ved et potmeter.
 </table>
 
 ## Oppkobling
-![Oppkoblingskjema](motor-controller-sketch.png)
+![Oppkoblingskjema](https://github.com/TheLifeIsYours/Arduino-Motor-Controller/blob/master/Motor-controller-sketch.png?raw=true)
