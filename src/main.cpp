@@ -186,6 +186,7 @@ void updateMotorValues() {
   setMotor(speed, direction);
 }
 
+//Update loop
 void loop() {
   readPotMeter();
   readButtonEvents();
