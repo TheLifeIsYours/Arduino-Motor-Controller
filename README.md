@@ -7,25 +7,25 @@ Ved å benytte en L293D IC for kontrollering av en motor, kan man ved en mikroko
  I vårt senario benytter L293D IC'n seg av pwm signalet vi gir inn på pinne 1 (1,2 enable), fra pinne ~9 på mikrokontrolleren, dette signalet representerer farten av motoren, samt også spenningen tilført motoren (1,5v - 3,5v). For å kunne si hvilken retning motoren skal snurre, gir vi digitale signaler (HIGH/LOW) inn på pinne 1A og 2A, disse må være motsatt av hverandre for å gi retningen. Lav på 1A og høy på 2A vil få motoren til å kjøre med klokken, og motsatt oppkobling mot klokken (alt ettersom man har koblet opp polene på motoren). Motoren er koblet til på pinne 1Y og 2Y.
 
 ### Programmerte funkjsoner
-
+ 
  - Minimum hastighet før motoren skrur seg av.
  - Motoren starter uten å henge fra full stans til kjørende.potmeteret sier hastigheten skal være.
  - Motoren endrer retning med en myk overgang med trykk av en knapp.
  - Endre hastighet av motoren med et pot-meter
 
-### Start
+#### Start
 Når motoren starter opp fra full stans, er det ett lite kick som får motoren i gang. Dette forhindrer at motoren henger ved for lav tilført driv spenning.
    - Når motoren får tilført en for lav drive spenning, så vil motoren henge helt til man enten fysisk gir rotoren rotasjon, eller man gir litt høyere driv spenning. For å komme rundt at motoren henger, er det definert en safe_min_start_speed, som forklarer minimum trygg start fart/signal, som vil garantere at motoren starter. Etter motoren har startet å snurre fra safe_min_start_speed, settes hastigheten til hva 
 
-### Stop
+#### Stop
 Programmert er det begrensinger for hvor sakte motoren kan kjøre, når pot-meteret er under en bestemt verdi, skrus motoren av.
 - Ved for lav tilført driver signal, skrus motoren av for å forhindre at motoren henger.
 
-### Retnigns endring
+#### Retnigns endring
 Motoren vil endre retning ved en myk stop/start funksjon.
 - Om man trykker på den oppkoblede knappen, vil dette signalisere at motoren skal endre retning. Mikrokontrolleren vil da først gradvis stanse motoren før den endrer retning. for så å sette opp hastigheten til hva potentiometeret tilsier. Dette forhindrer momentat endring av rettning, og forhindrer uegnet last på moteren fra momentetet av lasten koblet til rotoren.
 
-### Hastighet
+#### Hastighet
 Hastigheten kan kontrolleres ved et potmeter.
    - Snur man på potmeteret så leses verdien digitalt av med mikrokontrolleren, signalet gjøres om fra 0-1023 til 0-255 som driver motoren. Snur man potmeteret for langt til venstre (mot klokken), vil motoren skrus av. Dette forhindrer at motoren henger ved for lav tilført driv spenning.
 
